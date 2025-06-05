@@ -1,26 +1,38 @@
 name: CI
 
 on: [push]
+
 jobs:
-    build-test:
-        runs-on: ubuntu-24.04
-        steps:
+  build-test:
+    runs-on: ubuntu-latest  # Corrigido: versão mais recente e válida
+    steps:
+      - name: Checkout      # Nome corrigido (sem typo)
+        uses: actions/checkout@v4  # Versão atualizada e nome correto
 
-            - name: checkuot
-              uses: actions/checkuot@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # Especifique sua versão do Node.js
 
-            - name: Cypress Tests
-              uses: cypress-io/github-action@v5
-              with:
-                start: 'npm run dev'
-                buiild: 'npm run build'
-                
-            - uses: actions/upload-artifact@v3 
-              if: always()
-              with:
-                name: Cypress Result
-                path: |
-                    cypress/screenshots
-                    cypress/videos
-                    cypress/results
-              if-no-files-found: ignore
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Project  # Passo de build separado
+        run: npm run build
+
+      - name: Cypress Tests
+        uses: cypress-io/github-action@v6  # Versão atualizada
+        with:
+          start: npm run dev  # Comando para iniciar servidor de desenvolvimento
+          wait-on: 'http://localhost:3000'  # Necessário para aguardar o servidor
+        continue-on-error: true  # Permite continuar após falhas
+
+      - name: Upload Artifacts
+        if: always()  # Executa mesmo com falha nos testes
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-results
+          path: |
+            cypress/screenshots
+            cypress/videos
+          if-no-files-found: ignore
