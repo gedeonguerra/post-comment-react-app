@@ -1,53 +1,85 @@
-# Post Comment React App
+# 📝 Post Comment React App
 
-Este repositório contém um aplicativo React simples de comentário de post.
+Este repositório contém um aplicativo React simples que permite ao usuário publicar e remover comentários em um post.
 
-### Pré-requisitos
+## 🚀 Tecnologias Utilizadas
 
-Certifique-se de ter o Node.js instalado em seu sistema antes de executar este aplicativo.
+* [React](https://reactjs.org/)
+* [Vite](https://vitejs.dev/) — para build e desenvolvimento rápido
+* [JavaScript (ES6+)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+* [Node.js](https://nodejs.org/) — ambiente de execução
 
-- Node.js: [Baixe aqui](https://nodejs.org)
+## 📦 Pré-requisitos
 
-### Instalação
+Antes de começar, você precisará ter o **Node.js** instalado em sua máquina.
 
-1. Clone o repositório para o seu diretório local:
+> 🔗 [Download Node.js](https://nodejs.org)
 
-```shell
-git clone <URL do repositório>
+Recomenda-se utilizar a versão **LTS** para melhor compatibilidade.
+
+## 📥 Instalação
+
+1. Clone este repositório:
+
+```bash
+git clone https://github.com/seu-usuario/post-comment-react-app.git
 ```
 
-2. Navegue até o diretório do projeto:
+2. Acesse o diretório do projeto:
 
-```shell
-cd <nome do diretório>
+```bash
+cd post-comment-react-app
 ```
 
-3. Instale as dependências necessárias:
+3. Instale as dependências:
 
-```shell
+```bash
 npm install
 ```
 
-### Executando o Aplicativo
+## 🧪 Rodando em modo de desenvolvimento
 
-Depois de concluir a instalação, você pode iniciar o aplicativo executando o seguinte comando:
+Execute o seguinte comando:
 
-```shell
+```bash
 npm run dev
 ```
 
-Isso iniciará o aplicativo React em modo de desenvolvimento. Abra o navegador e acesse `http://localhost:5173` para visualizar o aplicativo.
+Abra seu navegador em [`http://localhost:5173`](http://localhost:5173) para visualizar o app.
 
-Qualquer alteração no código-fonte será automaticamente recarregada no navegador.
+> Qualquer alteração no código será refletida automaticamente no navegador.
 
-### Construção do Projeto
+## 🏗️ Build de Produção
 
-Para criar uma versão otimizada do aplicativo para produção, execute o seguinte comando:
+Para gerar uma versão otimizada para produção:
 
-```shell
+```bash
 npm run build
 ```
 
-Isso criará uma pasta `build` no diretório do projeto com os arquivos otimizados para produção.
+Os arquivos otimizados serão gerados na pasta `dist`.
+
+## 💡 Funcionalidades
+
+* [x] Inserir novos comentários
+* [x] Remover comentários
+* [x] Interface simples e intuitiva
+
+## 🗂️ Estrutura do Projeto
+
+```
+post-comment-react-app/
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── vite.config.js
+```
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
 
 
